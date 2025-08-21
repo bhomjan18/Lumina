@@ -1,0 +1,99 @@
+/* Header and navigation */
+header {
+    background-color: var(--light);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header_logo {
+    height: 30px;
+    width: 30px;
+    object-fit: cover;
+}
+
+.div_flex {
+    display: flex;
+    place-items: center;
+}
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+.logo {
+    font-family: 'Playfair Display', serif;
+    /* font-size: 1.8rem; */
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: 1px;
+}
+.logo span {
+    color: var(--primary);
+}
+nav ul {
+    display: flex;
+    gap: 40px;
+}
+nav a {
+    font-weight: 500;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+    position: relative;
+}
+nav a:hover {
+    color: var(--primary);
+}
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s;
+}
+nav a:hover::after {
+    width: 100%;
+}
+.header-icons {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.header-icon {
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s;
+    font-size: 1.2rem;
+}
+.header-icon:hover {
+    color: var(--primary);
+}
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background-color: var(--primary);
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    font-size: 0.7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--dark);
+    cursor: pointer;
+}

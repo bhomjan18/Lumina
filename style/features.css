@@ -1,0 +1,26 @@
+/* Features section */
+.features {
+    padding: 80px 0;
+}
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+.feature-card {
+    text-align: center;
+    padding: 30px;
+}
+.feature-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 20px;
+}
+.feature-title {
+    font-size: 1.4rem;
+    margin-bottom: 15px;
+}
+.feature-text {
+    color: var(--gray);
+    font-size: 0.95rem;
+}

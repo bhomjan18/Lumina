@@ -1,0 +1,121 @@
+/* Responsive Styles */
+
+@media (max-width: 1100px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (max-width: 992px) {
+    .hero-container {
+        flex-direction: column;
+    }
+    .hero-content, .hero-image {
+        width: 100%;
+        padding-right: 0;
+        text-align: center;
+    }
+    .hero-content {
+        margin-bottom: 50px;
+    }
+    .hero p {
+        margin: 0 auto 30px;
+    }
+    .categories-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (min-width: 768px) and (max-width: 900px) {
+    .div_flex {
+        position: relative;
+        place-items: center;
+    }
+    
+    .div_flex .header_logo,
+    .div_flex .logo {
+        width: 30px;
+        height: 30px;
+    }
+ nav ul {
+        flex-direction: row;
+        gap: 8px;
+    }
+    
+    .div_flex .logo {
+        font-size: 14px; /* Adjust text size */
+    }
+}
+@media (max-width: 768px) {
+   
+    nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: white;
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        display: none;
+        z-index: 10;
+    }
+    nav.active {
+        display: block;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .mobile-menu-btn {
+        display: block;
+    }
+    .hero {
+        padding: 60px 0;
+    }
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+    .section-title h2 {
+        font-size: 2rem;
+    }
+    .cart-sidebar {
+        width: 320px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .categories-grid, .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+/* Responsive Styles for Contact Page */
+@media (max-width: 992px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+    .contact-section {
+        padding: 60px 0;
+    }
+    
+    .contact-info,
+    .contact-form {
+        padding: 30px;
+    }
+}

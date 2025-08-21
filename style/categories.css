@@ -1,0 +1,71 @@
+/* Categories section */
+.categories {
+    padding: 100px 0;
+}
+.section-title {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+.section-title h2 {
+    font-size: 2.5rem;
+    display: inline-block;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+.section-subtitle {
+    color: var(--primary);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.section-title p {
+    max-width: 600px;
+    margin: 0 auto;
+    color: var(--gray);
+}
+.categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    height: 300px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+    cursor: pointer;
+}
+.category-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.12);
+}
+.category-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 0.5s;
+}
+.category-card:hover .category-img {
+    transform: scale(1.05);
+}
+.category-name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    color: white;
+    padding: 30px 20px 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-align: center;
+    transition: all 0.3s;
+}
+.category-card:hover .category-name {
+    padding-bottom: 30px;
+}
