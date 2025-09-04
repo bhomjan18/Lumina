@@ -42,27 +42,31 @@
             </div>
             <a href="#" class="logo">Lumina<span>.</span></a>
             </div>
-            <nav id="mainNav">
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#products">Shop</a></li>
-                <li><a href="#categories">Collections</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li id="authLink">
-                    <a href="login.html" id="loginLink">Login</a>
-                    <a href="#" id="logoutLink" style="display: none;">Logout</a>
-                </li>
-            </ul>
-        </nav>
-            <div class="header-icons">
-                <div class="header-icon">
+      <nav id="mainNav">
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#products">Shop</a></li>
+        <li><a href="index.html#categories">Collections</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <!-- Add this line for wishlist -->
+        <li><a href="wishlist.html">Wishlist</a></li>
+        <li id="authLink">
+            <a href="login.html" id="loginLink">Login</a>
+            <a href="#" id="logoutLink" style="display: none;">Logout</a>
+        </li>
+    </ul>
+</nav>
+            <input id="searchInput" type="text" style="display: none;" class="max-w-4xl ">
+
+            <div class="header-icons" id="searchIcon">
+                <div class="header-icon searchIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="11" cy="11" r="8"></circle>
                         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                     </svg>
                 </div>
-                <div class="header-icon">
+                <div class="header-icon" id="wishlistIcon">
                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
                     </svg>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Lumina</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/header.css">
+    <link rel="stylesheet" href="style/products.css">
+    <link rel="stylesheet" href="style/footer.css">
+    <link rel="stylesheet" href="style/cart.css">
+    <link rel="stylesheet" href="style/product-detail.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+            <div class="div_flex">
+                <div class="header_logo">
+                    <img src="./img/logo.png" class="header_logo" alt="">
+                </div>
+                <a href="index.html" class="logo">Lumina<span>.</span></a>
+            </div>
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="index.html#products">Shop</a></li>
+                    <li><a href="index.html#categories">Collections</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li id="authLink">
+                        <a href="login.html" id="loginLink">Login</a>
+                        <a href="#" id="logoutLink" style="display: none;">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="header-icons">
+                <div class="header-icon" id="searchIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                    </svg>
+                </div>
+                <div class="header-icon" id="wishlistIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+                    </svg>
+                    <span class="wishlist-count" id="wishlistCount">0</span>
+                </div>
+                <div class="header-icon" id="cartIcon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container product-detail-container">
+        <div class="breadcrumb">
+            <a href="index.html">Home</a> &gt; 
+            <a href="index.html#products">Shop</a> &gt; 
+            <span id="productCategory"></span> &gt; 
+            <span id="productNameBreadcrumb"></span>
+        </div>
+        
+        <div class="product-detail" id="productDetail">
+            <!-- Product details will be loaded here via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Lumina</h3>
+                    <p>Handcrafted accessories for every occasion. Our pieces are designed to add that perfect finishing touch to your style.</p>
+                    <div class="social-links">
+                        <!-- Social links as in your other pages -->
+                    </div>
+                </div>
+                <!-- Other footer columns as in your other pages -->
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Lumina. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <!-- Cart sidebar as in your other pages -->
+    </div>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+    <script>
+        // Get product ID from URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const productId = parseInt(urlParams.get('id'));
+        
+        // Find the product
+        const product = products.find(p => p.id === productId);
+        
+        if (product) {
+            document.title = `${product.name} | Lumina`;
+            document.getElementById('productCategory').textContent = product.category;
+            document.getElementById('productNameBreadcrumb').textContent = product.name;
+            
+            const productDetail = document.getElementById('productDetail');
+            productDetail.innerHTML = `
+                <div class="product-image">
+                    <img src="${product.image}" alt="${product.name}">
+                </div>
+                <div class="product-info">
+                    <h1>${product.name}</h1>
+                    <p class="product-category">${product.category}</p>
+                    <p class="product-price">$${product.price.toFixed(2)}</p>
+                    <p class="product-description">This beautiful ${product.category.toLowerCase()} is handcrafted with attention to detail. Perfect for adding elegance to any outfit.</p>
+                    
+                    <div class="product-actions">
+                        <button class="add-to-cart-btn" onclick="addToCart(${product.id})">
+                            Add to Cart
+                        </button>
+                        <button class="wishlist-btn" onclick="toggleWishlist(${product.id})">
+                            Add to Wishlist
+                        </button>
+                    </div>
+                    
+                    <div class="product-details">
+                        <h3>Product Details</h3>
+                        <ul>
+                            <li>Material: High-quality materials</li>
+                            <li>Care: Wipe clean with a soft cloth</li>
+                            <li>Shipping: Free shipping on orders over $50</li>
+                            <li>Returns: 30-day return policy</li>
+                        </ul>
+                    </div>
+                </div>
+            `;
+        } else {
+            document.getElementById('productDetail').innerHTML = `
+                <div class="product-not-found">
+                    <h2>Product Not Found</h2>
+                    <p>Sorry, the product you're looking for doesn't exist.</p>
+                    <a href="index.html" class="btn btn-primary">Return to Shop</a>
+                </div>
+            `;
+        }
+        
+        function addToCart(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                addToCart(product);
+                showNotification(`${product.name} added to cart!`);
+            }
+        }
+        
+        function toggleWishlist(id) {
+            const product = products.find(p => p.id === id);
+            if (product) {
+                if (!wishlist.find(item => item.id === product.id)) {
+                    wishlist.push(product);
+                    showNotification(`${product.name} added to wishlist!`);
+                } else {
+                    const index = wishlist.findIndex(item => item.id === product.id);
+                    wishlist.splice(index, 1);
+                    showNotification(`${product.name} removed from wishlist!`, "warning");
+                }
+                updateWishlistCount();
+            }
+        }
+    </script>
+</body>
+</html>

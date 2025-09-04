@@ -97,3 +97,12 @@ nav a:hover::after {
     color: var(--dark);
     cursor: pointer;
 }
+
+
+#searchInput{
+    width: 100%;
+    max-width:590px ;
+    border:2px solid #1A1a1a;
+    border-radius: 24px;
+    padding:4px 16px;
+}
